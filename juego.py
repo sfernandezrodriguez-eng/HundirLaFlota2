@@ -3,8 +3,10 @@ class Juego:
     def __init__(self):
         self.tablero = Tablero()
         self.lanzar_ataque(1, 1)
-        self.lanzar_ataque(4,0)
-        self.lanzar_ataque(7,6)
+        self.lanzar_ataque(1,2)
+        self.lanzar_ataque(1,3)
+        self.lanzar_ataque(1, 4)
+        self.lanzar_ataque(1, 5)
 
     def lanzar_ataque(self,x,y):
         print(f"Ataque a {x},{y}")
