@@ -4,6 +4,7 @@ class Tablero:
         self.AGUA = 0
         self.TOCADO = 1
         self.HUNDIDO = 2
+        self.disparos_realizados = [[False for _ in range(10)] for _ in range(10)]
         por1 = Nave("Enterprise", "portaaviones", 5)
         fra1 = Nave("Bismarck", "fragata", 3)
         fra2 = Nave("Prince of Wales", "fragata", 3)
@@ -28,8 +29,16 @@ class Tablero:
 
     def comprobar_impacto(self,x,y):
        print("Estoy comprobando el impacto")
+       if self.disparos_realizados[x][y]:
+           print("Ya se disparó en esa posición")
+           return -1  # Usamos -1 para indicar "repetido"
+
+           # 2. Si no se había disparado, marcamos la casilla como disparada
+       self.disparos_realizados[x][y] = True
+
+       # 3. Comprobamos si hay nave o agua
        nave = self.casillero[x][y]
        if nave is None:
            return self.AGUA
-       else:
-           return nave.recibir_disparo()
+
+       return nave.recibir_disparo()
