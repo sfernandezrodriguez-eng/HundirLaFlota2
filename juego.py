@@ -12,6 +12,7 @@ class Juego:
 
 
     def mostrar_resultado(self, resultado):
+        #dependiendo del resultado que genere da una cosa o otra
         if resultado == 0:
             print("Agua")
         elif resultado == 1:
