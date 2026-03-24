@@ -1,7 +1,7 @@
 from casilla import *
 class Tablero:
     def __init__(self, tamanho=10):
-        #dentro de este innit creamos los objetos barcos
+
         self.AGUA = 0
         self.TOCADO = 1
         self.HUNDIDO = 2
