@@ -1,8 +1,29 @@
-from juego import Juego
-from nave import Nave
+from casilla import *
 class Tablero:
-    def __init__(self):
-        self.AGUA = 0
+    def __init__(self, tamanho=10):
 
-    def comprobar_impacto(self,x,y):
-        Nave.recibir_disparo(x,y)
+        self.AGUA = 0
+        self.TOCADO = 1
+        self.HUNDIDO = 2
+        por1 = Nave("Damian", "portaaviones", 5)
+        fra1 = Nave("Commit", "fragata", 3)
+        fra2 = Nave("Push", "fragata", 3)
+        fra3 = Nave("Un10plis", "fragata", 3)
+        sub1 = Nave("U-47", "submarino", 1)
+        sub2 = Nave("U-96", "submarino", 1)
+        sub3 = Nave("U-505", "submarino", 1)
+        sub4 = Nave("U-534", "submarino", 1)
+
+        self.casillero = [
+
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'),Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(por1), Casilla(por1), Casilla(por1), Casilla(por1), Casilla(por1),Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'),Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(fra1), Casilla(fra1), Casilla(fra1),Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'),Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla(sub1),Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(fra2), Casilla(fra2), Casilla(fra2),Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla(fra3), Casilla(fra3), Casilla(fra3), Casilla('agua'), Casilla('agua'), Casilla(sub3), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua')],
+            [Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla(sub4), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla('agua'), Casilla(sub2)]
+        ]
